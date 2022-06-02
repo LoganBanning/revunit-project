@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Details from './Components/details';
-import Posts from './Components/posts';
+import Details from './Components/Details/details';
+import Posts from './Components/Posts/posts';
 
 export default (
   <BrowserRouter>

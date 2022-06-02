@@ -1,0 +1,42 @@
+body {
+  background-color: #403d39;
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.post-page {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.post-title {
+  color: orange;
+  font-weight: bold;
+  font-size: 40px;
+}
+
+.all-posts {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.post-list {
+  text-decoration: none;
+  color: white;
+}
+
+.post-list:hover {
+  color: orange;
+  cursor: pointer;
+  font-weight: bold;
+}

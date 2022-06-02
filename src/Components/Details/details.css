@@ -1,0 +1,60 @@
+.details-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h3 {
+  color: #e76f51;
+  font-size: 40px;
+}
+
+h4 {
+  color: orange;
+  font-size: 40px;
+}
+
+input {
+  width: 50%;
+  height: 40px;
+}
+
+button {
+  width: 50.25%;
+  background-color: orange;
+  height: 30px;
+  margin-bottom: 30px;
+  border: none;
+}
+
+button:hover {
+  background-color: #e76f51;
+}
+
+.details-body {
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.details-comments {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.details-link {
+  text-decoration: none;
+  color: orange;
+  font-size: 30px;
+}
+
+.details-link:hover {
+  color: #e76f51;
+  cursor: pointer;
+  font-weight: bold;
+}
