@@ -25,28 +25,32 @@ const Details = () => {
   }, [id]);
 
   const handleSubmit = () => {
-    axios
-      .post(`https://jsonplaceholder.typicode.com/posts`, {
-        body: JSON.stringify({
-          name: newName,
-          body: newBody,
-          email: newEmail,
-          userId: 1,
-        }),
-        headers: {
-          "Content-type": "application/json; charset=UTF-8",
-        },
-      })
-      .then((res) => {
-        setNewName('');
-        setNewBody('');
-        setNewEmail('');
-        const newComment = { 
-          ...JSON.parse(res.data.body),
-          id: res.data.id,
-         }
-        setComments([...comments, newComment]);
-      });
+    try {
+      axios
+        .post(`https://jsonplaceholder.typicode.com/posts`, {
+          body: JSON.stringify({
+            name: newName,
+            body: newBody,
+            email: newEmail,
+            userId: 1,
+          }),
+          headers: {
+            "Content-type": "application/json; charset=UTF-8",
+          },
+        })
+        .then((res) => {
+          setNewName('');
+          setNewBody('');
+          setNewEmail('');
+          const newComment = { 
+            ...JSON.parse(res.data.body),
+            id: res.data.id,
+        }
+          setComments([...comments, newComment]);
+        });
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   return (
