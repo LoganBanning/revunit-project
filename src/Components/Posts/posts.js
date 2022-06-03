@@ -8,7 +8,7 @@ import './posts.css';
 
 const Posts = (props) => {
   const [list, setList] = useState([]);
-  console.log(list);
+  const [ search, setSearch ] = useState('');
 
   useEffect(() => {
     try {
@@ -21,14 +21,26 @@ const Posts = (props) => {
     }
   }, []);
 
+  // const filterPosts = (list) => {
+  //   list.filter((post) => {
+  //     return `${list.title}`
+  //     .includes(search.toLowerCase());
+  //   })
+  // }
+
   return (
       <div className='post-page'>
           <h2 className="post-title">Posts</h2>
+          <input 
+          className='search-input'
+          type='search'
+          placeholder='Search Posts'
+          onChange={(e) => setSearch(e.target.value)} />
           <ul className='all-posts'>
-              {list.map(({ title, body, id }) => (
+              {list.map(({ title, body, id, userId }) => (
               <Link to={`details/${id}`}
               key={id}
-              state={{ title, body }}
+              state={{ title, body, userId }}
               className='post-list'>
                   <li>{title}</li>
               </Link>
