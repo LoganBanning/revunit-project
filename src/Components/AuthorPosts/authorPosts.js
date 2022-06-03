@@ -3,10 +3,8 @@ import axios from 'axios';
 import { Link, useParams } from 'react-router-dom';
 import '../Posts/posts.css';
 
-const AuthorPosts = (props) => {
+const AuthorPosts = () => {
   const { userId } = useParams();
-  // const location = useLocation();
-  // const { id } = location.state;
   const [list, setList] = useState([]);
 
   useEffect(() => {

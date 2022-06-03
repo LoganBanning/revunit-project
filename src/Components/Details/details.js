@@ -3,14 +3,14 @@ import { useParams, useLocation, Link } from "react-router-dom";
 import axios from "axios";
 import "./details.css";
 
-const Details = (props) => {
+const Details = () => {
   const { id } = useParams();
   const location = useLocation();
   const { title, body, userId } = location.state;
   const [comments, setComments] = useState([]);
-  const [newBody, setNewBody] = useState([]);
-  const [newName, setNewName] = useState([]);
-  const [newEmail, setNewEmail] = useState([]);
+  const [newBody, setNewBody] = useState('');
+  const [newName, setNewName] = useState('');
+  const [newEmail, setNewEmail] = useState('');
 
   useEffect(() => {
     try {
@@ -38,6 +38,9 @@ const Details = (props) => {
         },
       })
       .then((res) => {
+        setNewName('');
+        setNewBody('');
+        setNewEmail('');
         const newComment = { 
           ...JSON.parse(res.data.body),
           id: res.data.id,
@@ -65,6 +68,7 @@ const Details = (props) => {
       <input
         type="text"
         placeholder="Name"
+        value={newName}
         onChange={(e) => {
           setNewName(e.target.value);
         }}
@@ -72,6 +76,7 @@ const Details = (props) => {
       <input
         type="text"
         placeholder="Comment Here"
+        value={newBody}
         onChange={(e) => {
           setNewBody(e.target.value);
         }}
@@ -79,6 +84,7 @@ const Details = (props) => {
       <input
         type="text"
         placeholder="Email"
+        value={newEmail}
         onChange={(e) => {
           setNewEmail(e.target.value);
         }}
